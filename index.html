@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Socket.io</title>
+</head>
+<body>
+<h1>Communication with socket.io!</h1>
+<script src="client.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+
+<script>
+    var socket = io.connect('http://localhost:8008');
+
+    socket.on('message', function(message) {
+
+        alert('The server has a message for you: ' + message);
+    })
+</script>
+<label>Your ID:</label><br/>
+<textarea id="yourId"></textarea><br/>
+<label>Other ID:</label><br/>
+<textarea id="otherId"></textarea>
+<button id="connect">connect</button><br/>
+
+<label>Enter Message:</label><br/>
+<textarea id="yourMessage"></textarea>
+<button id="send">send</button>
+<pre id="messages"></pre>
+
+<video autoplay ></video>
+</body>
+
+</html>
